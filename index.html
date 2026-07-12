@@ -82,12 +82,9 @@
       // Quando a App Store aprovar, coloque o link real aqui:
       var APPLE = "https://play.google.com/store/apps/details?id=com.twodevs.chills";
 
-      // Redireciona automaticamente no celular (comente estas linhas se
-      // preferir sempre mostrar os botoes em vez de redirecionar).
-      if (isAndroid) { window.location.href = PLAY; }
-      else if (isIOS) { window.location.href = APPLE; }
-
-      // Ajusta o botao da Apple para o link correto no desktop tambem.
+      // (Redirecionamento automatico DESLIGADO: mostramos os dois botoes.)
+      // Por enquanto os dois botoes levam para a Play Store.
+      // Quando a App Store aprovar, troque o valor de APPLE acima pelo link real.
       document.getElementById('appleBtn').href = APPLE;
     })();
   </script>
