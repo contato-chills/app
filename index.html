@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baixar o Chills Game</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+  .card { max-width: 380px; width: 100%; }
+  .logo {
+    width: 130px; height: 130px;
+    margin: 0 auto 24px;
+    border-radius: 28px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 0 40px rgba(255,120,0,0.35);
+  }
+  h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+  p.sub { color: #999; font-size: 15px; margin-bottom: 32px; line-height: 1.5; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 14px;
+    border-radius: 16px;
+    font-size: 16px; font-weight: 700;
+    text-decoration: none;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-play { background: #fff; color: #000; }
+  .btn-apple { background: #1c1c1e; color: #fff; border: 1px solid #333; }
+  .btn.soon { opacity: 0.45; pointer-events: none; }
+  .tag { font-size: 11px; color: #ff7800; letter-spacing: 1px; margin-top: 20px; }
+  .foot { margin-top: 28px; font-size: 12px; color: #555; }
+  .foot a { color: #777; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="logo.png" alt="Chills Game">
+    <h1>Chills Game</h1>
+    <p class="sub">Os melhores jogos para animar o seu rolê. Baixe grátis:</p>
+
+    <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=com.twodevs.chills">
+      Disponível no Google Play
+    </a>
+
+    <!-- Enquanto a Apple nao aprova, o botao iPhone leva pra Play tambem.
+         Quando aprovar, troque o href pelo link real da App Store
+         e remova a classe "soon" se quiser deixa-lo destacado. -->
+    <a class="btn btn-apple" id="appleBtn" href="https://play.google.com/store/apps/details?id=com.twodevs.chills">
+      Baixar na App Store
+    </a>
+
+    <div class="tag">BY TWO DEVS</div>
+    <div class="foot">
+      <a href="https://contato-chills.github.io/politicas-de-privacidade/">Privacidade</a> ·
+      <a href="https://contato-chills.github.io/termos-de-uso/">Termos</a>
+    </div>
+  </div>
+
+  <script>
+    // Detecta o aparelho e manda direto pra loja certa.
+    (function () {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isAndroid = /android/i.test(ua);
+      var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+
+      var PLAY = "https://play.google.com/store/apps/details?id=com.twodevs.chills";
+      // Quando a App Store aprovar, coloque o link real aqui:
+      var APPLE = "https://play.google.com/store/apps/details?id=com.twodevs.chills";
+
+      // Redireciona automaticamente no celular (comente estas linhas se
+      // preferir sempre mostrar os botoes em vez de redirecionar).
+      if (isAndroid) { window.location.href = PLAY; }
+      else if (isIOS) { window.location.href = APPLE; }
+
+      // Ajusta o botao da Apple para o link correto no desktop tambem.
+      document.getElementById('appleBtn').href = APPLE;
+    })();
+  </script>
+</body>
+</html>
