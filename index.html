@@ -143,20 +143,17 @@ nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(18px);-webkit-backdro
   display:flex;align-items:center;flex:1;padding:14px 0}
 .card-art{height:84px;opacity:.8;object-fit:contain}
 .back-c{position:relative;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;gap:16px;height:100%;overflow:hidden;border-radius:20px}
-/* brilho laranja saindo do centro, igual ao glow das telas do app */
-.back-c::before{content:'';position:absolute;width:260px;height:260px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,87,34,.22),rgba(255,87,34,0) 70%)}
-/* aneis concentricos discretos, pra nao ficar um retangulo chapado */
-.back-c::after{content:'';position:absolute;width:168px;height:168px;border-radius:50%;
-  border:1px solid rgba(255,87,34,.22);
-  box-shadow:0 0 0 22px rgba(255,87,34,.035),0 0 0 23px rgba(255,87,34,.10)}
-.back-c img{position:relative;width:74px;height:auto;
-  filter:drop-shadow(0 0 22px rgba(255,87,34,.55))}
-.back-c b{position:relative;font-family:var(--display);font-size:17px;letter-spacing:.09em;
-  color:#fff;font-weight:400}
-.back-c p{position:relative;font-size:10px;font-weight:900;letter-spacing:2.2px;
-  color:rgba(255,255,255,.42);text-align:center}
+  justify-content:center;gap:9px;height:100%;overflow:hidden;border-radius:20px}
+/* so um brilho curto atras da marca, nao um disco ocupando a carta inteira */
+.back-c::before{content:'';position:absolute;width:132px;height:132px;border-radius:50%;
+  margin-bottom:26px;
+  background:radial-gradient(circle,rgba(255,87,34,.18),rgba(255,87,34,0) 68%)}
+.back-c img{position:relative;width:46px;height:auto;
+  filter:drop-shadow(0 0 14px rgba(255,87,34,.5))}
+.back-c b{position:relative;font-family:var(--display);font-size:12px;letter-spacing:.14em;
+  color:rgba(255,255,255,.82);font-weight:400}
+.back-c p{position:relative;margin-top:2px;font-size:8px;font-weight:900;letter-spacing:1.8px;
+  color:rgba(255,255,255,.3);text-align:center}
 /* ModernButton: gradiente, sombra sólida 0 6px 0, glow, brilho no topo */
 .g-acts{display:flex;gap:12px;padding:0 6px}
 .mbtn{flex:1;border:none;cursor:pointer;color:#fff;font-family:var(--body);font-size:14px;
@@ -339,7 +336,7 @@ footer{border-top:1px solid var(--edge);padding:52px 0 36px}
         </a>
       </div>
       <div class="hero-stats">
-        <div class="hs"><b>+1.000</b><span>jogadores ativos</span></div>
+        <div class="hs"><b>+1.200</b><span>jogadores no app</span></div>
         <div class="hs"><b>+500</b><span>cartas no app</span></div>
         <div class="hs"><b>Grátis</b><span>iPhone e Android</span></div>
       </div>
